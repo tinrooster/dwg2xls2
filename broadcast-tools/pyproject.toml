@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dwg2xls"
+version = "0.1.0"
+description = "AutoCAD DWG to Excel Export Tool"
+authors = [
+    {name = "AC Hay", email = "dev@tinrooster.com"},
+]
+requires-python = ">=3.8"
+dependencies = [
+    "PyQt6",
+    # Add other dependencies here
+]
+
+[project.scripts]
+dwg2xls = "dwg2xls.main:main"  # Note: changed from dwg2xls_tool to dwg2xls
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dwg2xls"]
+
+[tool.hatch.build]
+packages = ["src/dwg2xls"]
