@@ -1,9 +1,40 @@
 import os
 import shutil
 from pathlib import Path
+from typing import Dict, List
 
-def create_structure(base_path: str, version: str):
-    """Create project folder structure"""
+def create_structure(base_path: str, version: str) -> None:
+    """Creates a standardized project structure for the Broadcast Tools application.
+    
+    This script generates a basic project scaffold with the following structure:
+    - Backend (FastAPI)
+        - Core business logic
+        - API endpoints
+        - Configuration
+        - Tests
+    - Frontend (React/TypeScript)
+        - Component structure
+        - Asset management
+        - Utility functions
+        - TypeScript definitions
+    
+    Args:
+        base_path: The root directory where the project will be created
+        version: Version string for the project (e.g., "v1.0.0")
+    
+    Project Scope:
+        - Basic router analysis functionality
+        - Minimal UI for data visualization
+        - File-based configuration
+        - Local development setup
+    
+    Future Considerations:
+        - Database integration
+        - Authentication system
+        - Advanced analytics
+        - Real-time monitoring
+        - API documentation
+    """
     
     # Base project paths
     project_root = Path(base_path) / f"broadcast-tools-{version}"
